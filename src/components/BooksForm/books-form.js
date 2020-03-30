@@ -22,7 +22,7 @@ class BooksForm extends React.Component {
     const { title, category } = this.state;
     const { createBook } = this.props;
     e.preventDefault();
-    createBook({ id: Math.floor(Math.random() * 10).toString(), title, category });
+    createBook({ id: Math.floor(Math.random() * 100).toString(), title, category });
   }
 
   handleChange(e) {
