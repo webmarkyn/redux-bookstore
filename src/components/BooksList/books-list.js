@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 import './books-list.css';
 import Book from '../Book';
-import CategoryFilter from '../categoryFilter';
 import { removeBook } from '../../actions';
 
 const BooksList = ({ books, removeBook, filter }) => {
@@ -14,7 +13,6 @@ const BooksList = ({ books, removeBook, filter }) => {
 
   return (
     <div className="booksList">
-      <CategoryFilter />
       <table>
         <thead>
           <tr>

@@ -1,0 +1,86 @@
+@import url('reset.css');
+
+body {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.navbar {
+  height: 95px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-content {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-content .left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul {
+
+}
+
+.navbar li {
+  display: inline-block;
+  margin-left: 47px;
+}
+
+.navbar li a, .navbar select {
+  height: 16px;
+  font-family: Montserrat;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  color: #121212;
+  text-transform: uppercase;
+}
+
+.navbar select {
+  background-color: #fff;
+  border: none;
+  padding-right: 5px;
+}
+
+.logo {
+  width: 240px;
+  height: 37px;
+  font-family: Montserrat;
+  font-size: 30px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0290ff;
+}
+
+.profile {
+  width: 45px;
+  height: 45px;
+  border: solid 1px #e8e8e8;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile .fa::before {
+  width: 17px;
+  height: 17px;
+  color: #0290ff;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
