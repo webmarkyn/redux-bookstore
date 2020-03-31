@@ -11,24 +11,24 @@ const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learnin
 
 const App = () => (
   <CategoriesContext.Provider value={categories}>
-    <div class="main">
-      <nav class="navbar">
-        <div class="navbar-content">
-          <div class="left">
-            <span class="logo">Bookstore CMS</span>
+    <div className="main">
+      <nav className="navbar">
+        <div className="navbar-content">
+          <div className="left">
+            <span className="logo">Bookstore CMS</span>
             <ul>
-              <li><a>Books</a></li>
+              <li><a href="/">Books</a></li>
               <li><CategoryFilter /></li>
             </ul>
           </div>
-          <div class="right">
-            <div class="profile">
-              <i class="fa fa-user" aria-hidden="true"></i>
+          <div className="right">
+            <div className="profile">
+              <i className="fa fa-user" aria-hidden="true" />
             </div>
           </div>
         </div>
       </nav>
-      <div class="container">
+      <div className="container">
         <BooksList />
         <BooksForm />
       </div>

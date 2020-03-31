@@ -13,19 +13,9 @@ const BooksList = ({ books, removeBook, filter }) => {
 
   return (
     <div className="booksList">
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Category</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          { filteredBooks.map(book => <Book key={book.id} book={book} removeBook={removeBook} />) }
-        </tbody>
-      </table>
+      { filteredBooks.map(book => (
+        <Book key={book.id} book={book} removeBook={removeBook} />
+      ))}
     </div>
   );
 };
