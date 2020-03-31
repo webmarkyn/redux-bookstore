@@ -5,8 +5,6 @@ import { createBook } from '../../actions';
 
 import './books-form.css';
 
-const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
-
 class BooksForm extends React.Component {
   constructor(props) {
     super(props);
@@ -31,6 +29,7 @@ class BooksForm extends React.Component {
 
   render() {
     const { title, category } = this.state;
+    const { categories } = this.props;
     return (
       <div className="books-form">
         <form onSubmit={this.handleSubmit}>
@@ -47,6 +46,7 @@ class BooksForm extends React.Component {
 
 BooksForm.propTypes = {
   createBook: PropTypes.func.isRequired,
+  categories: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default connect(null, { createBook })(BooksForm);
