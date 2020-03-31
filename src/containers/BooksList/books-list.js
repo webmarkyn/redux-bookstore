@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import './books-list.css';
-import Book from '../Book';
+import Book from '../../components/Book';
 
 const BooksList = ({ books }) => (
   <table>
