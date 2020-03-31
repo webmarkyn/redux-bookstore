@@ -30,7 +30,7 @@ body {
 
 .navbar li a, .navbar select {
   height: 16px;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-size: 13px;
   font-weight: normal;
   font-stretch: normal;
@@ -39,6 +39,7 @@ body {
   letter-spacing: 1.9px;
   color: #121212;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 .navbar select {
@@ -49,7 +50,7 @@ body {
 .logo {
   width: 240px;
   height: 37px;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-size: 30px;
   font-weight: bold;
   font-stretch: normal;
