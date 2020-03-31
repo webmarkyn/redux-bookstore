@@ -33,6 +33,7 @@ class BooksForm extends React.Component {
     const { categories } = this.props;
     return (
       <div className="books-form">
+        <h2 className="form-header">Add new book</h2>
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"
