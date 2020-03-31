@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import withCategories from '../HOC/withCategories';
 
 import './category-filter.css';
 
@@ -14,4 +15,4 @@ CategoryFilter.propTypes = {
   categories: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-export default CategoryFilter;
+export default withCategories()(CategoryFilter);

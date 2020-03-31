@@ -6,9 +6,9 @@ import './books-list.css';
 import Book from '../Book';
 import CategoryFilter from '../categoryFilter';
 
-const BooksList = ({ books, categories }) => (
+const BooksList = ({ books }) => (
   <div className="booksList">
-    <CategoryFilter categories={categories} />
+    <CategoryFilter />
     <table>
       <thead>
         <tr>
@@ -30,7 +30,6 @@ BooksList.propTypes = {
     title: PropTypes.string,
     category: PropTypes.string,
   })).isRequired,
-  categories: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 const mapStateToProps = state => ({ books: state.books });

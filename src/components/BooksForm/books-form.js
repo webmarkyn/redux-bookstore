@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { createBook } from '../../actions';
 
 import './books-form.css';
+import withCategories from '../HOC/withCategories';
 
 class BooksForm extends React.Component {
   constructor(props) {
@@ -49,4 +50,6 @@ BooksForm.propTypes = {
   categories: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-export default connect(null, { createBook })(BooksForm);
+export default connect(null, { createBook })(
+  withCategories()(BooksForm),
+);
