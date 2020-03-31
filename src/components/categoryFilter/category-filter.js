@@ -7,7 +7,7 @@ import { changeFilter } from '../../actions';
 import './category-filter.css';
 
 const CategoryFilter = ({ categories, changeFilter }) => {
-  const handleChange = (e) => changeFilter(e.target.value);
+  const handleChange = e => changeFilter(e.target.value);
 
   return (
     <select name="categories" id="categoriesFilter" defaultValue="All" onChange={handleChange}>
@@ -19,6 +19,7 @@ const CategoryFilter = ({ categories, changeFilter }) => {
 
 CategoryFilter.propTypes = {
   categories: PropTypes.arrayOf(PropTypes.string).isRequired,
+  changeFilter: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = { changeFilter };

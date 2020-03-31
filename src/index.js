@@ -8,11 +8,11 @@ import App from './components/App';
 
 const defaultBooks = {
   books: [
-    { id: Math.floor(Math.random() * 10).toString(), title: 'El Viejo y el Mar', category: 'Biography' },
-    { id: Math.floor(Math.random() * 10).toString(), title: 'Harry Potter', category: 'Kids' },
-    { id: Math.floor(Math.random() * 10).toString(), title: 'Something Random', category: 'Learning' },
+    { id: Math.floor(Math.random() * 100).toString(), title: 'El Viejo y el Mar', category: 'Biography' },
+    { id: Math.floor(Math.random() * 100).toString(), title: 'Harry Potter', category: 'Kids' },
+    { id: Math.floor(Math.random() * 100).toString(), title: 'Something Random', category: 'Learning' },
   ],
-  filter: 'All'
+  filter: 'All',
 };
 
 const store = createStore(rootReducer, defaultBooks);

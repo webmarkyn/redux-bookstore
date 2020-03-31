@@ -11,7 +11,7 @@ class BooksForm extends React.Component {
     super(props);
     this.state = {
       title: '',
-      category: '',
+      category: props.categories[0],
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -21,7 +21,7 @@ class BooksForm extends React.Component {
     const { title, category } = this.state;
     const { createBook } = this.props;
     e.preventDefault();
-    createBook({ id: Math.floor(Math.random() * 10).toString(), title, category });
+    createBook({ id: Math.floor(Math.random() * 100).toString(), title, category });
   }
 
   handleChange(e) {
