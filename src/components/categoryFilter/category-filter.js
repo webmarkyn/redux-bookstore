@@ -10,8 +10,8 @@ const CategoryFilter = ({ categories, changeFilter }) => {
   const handleChange = e => changeFilter(e.target.value);
 
   return (
-    <select name="categories" id="categoriesFilter" defaultValue="All" onChange={handleChange}>
-      <option value="All">All</option>
+    <select name="categories" id="categoriesFilter" defaultValue="" onChange={handleChange}>
+      <option value="">All</option>
       {categories.map(cat => (<option value={cat} key={cat}>{cat}</option>))}
     </select>
   );

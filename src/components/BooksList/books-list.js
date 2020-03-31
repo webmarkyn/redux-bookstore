@@ -8,7 +8,7 @@ import CategoryFilter from '../categoryFilter';
 import { removeBook } from '../../actions';
 
 const BooksList = ({ books, removeBook, filter }) => {
-  const filteredBooks = filter === 'All' ? books : books.filter(
+  const filteredBooks = !filter ? books : books.filter(
     book => book.category === filter,
   );
 
