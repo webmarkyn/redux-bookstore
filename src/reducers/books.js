@@ -1,6 +1,6 @@
 import { CREATE_BOOK, REMOVE_BOOK } from '../actions';
 
-const booksReducer = (state = [], {type, payload}) => {
+const booksReducer = (state = [], { type, payload }) => {
   switch (type) {
     case CREATE_BOOK:
       return [...state, payload];
