@@ -2,15 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import uniqid from 'uniqid';
+
 
 import rootReducer from './reducers';
 import App from './components/App';
 
 const defaultBooks = {
   books: [
-    { id: Math.floor(Math.random() * 100).toString(), title: 'El Viejo y el Mar', category: 'Biography' },
-    { id: Math.floor(Math.random() * 100).toString(), title: 'Harry Potter', category: 'Kids' },
-    { id: Math.floor(Math.random() * 100).toString(), title: 'Something Random', category: 'Learning' },
+    { id: uniqid(), title: 'El Viejo y el Mar', category: 'Biography' },
+    { id: uniqid(), title: 'Harry Potter', category: 'Kids' },
+    { id: uniqid(), title: 'Something Random', category: 'Learning' },
   ],
 };
 
