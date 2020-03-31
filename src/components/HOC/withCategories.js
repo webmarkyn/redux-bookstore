@@ -1,12 +1,12 @@
 import React from 'react';
 import CategoriesContext from '../../context/categoriesContext';
 
-const withCategories = () => Wrapped => (...props) => (
+const withCategories = Component => props => (
   <CategoriesContext.Consumer>
-    {
-      categories => <Wrapped {...props} categories={categories} />
-    }
+    {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+    {categories => <Component {...props} categories={categories} />}
   </CategoriesContext.Consumer>
 );
+
 
 export default withCategories;

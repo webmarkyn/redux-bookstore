@@ -15,4 +15,4 @@ CategoryFilter.propTypes = {
   categories: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-export default withCategories()(CategoryFilter);
+export default withCategories(CategoryFilter);

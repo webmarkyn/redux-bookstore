@@ -51,5 +51,5 @@ BooksForm.propTypes = {
 };
 
 export default connect(null, { createBook })(
-  withCategories()(BooksForm),
+  withCategories(BooksForm),
 );
