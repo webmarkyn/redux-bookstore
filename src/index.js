@@ -12,6 +12,7 @@ const defaultBooks = {
     { id: Math.floor(Math.random() * 10).toString(), title: 'Harry Potter', category: 'Kids' },
     { id: Math.floor(Math.random() * 10).toString(), title: 'Something Random', category: 'Learning' },
   ],
+  filter: 'All'
 };
 
 const store = createStore(rootReducer, defaultBooks);
