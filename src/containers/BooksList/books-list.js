@@ -3,24 +3,34 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import './books-list.css';
+import CategoryFilter from '../../components/categoryFilter';
 import Book from '../../components/Book';
 import { removeBook } from '../../actions';
 
-const BooksList = ({ books, removeBook }) => (
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Title</th>
-        <th>Category</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      { books.map(book => <Book key={book.id} book={book} removeBook={removeBook} />) }
-    </tbody>
-  </table>
-);
+const BooksList = ({ books, removeBook, filter }) => {
+  const filteredBooks = !filter ? books : books.filter(
+    book => book.category === filter,
+  );
+
+  return (
+    <div className="booksList">
+      <CategoryFilter />
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          { filteredBooks.map(book => <Book key={book.id} book={book} removeBook={removeBook} />) }
+        </tbody>
+      </table>
+    </div>
+  );
+};
 
 BooksList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.shape({
@@ -29,9 +39,10 @@ BooksList.propTypes = {
     category: PropTypes.string,
   })).isRequired,
   removeBook: PropTypes.func.isRequired,
+  filter: PropTypes.string.isRequired,
 };
 
-const mapStateToProps = state => ({ books: state.books });
+const mapStateToProps = state => ({ books: state.books, filter: state.filter });
 const mapDispatchToProps = { removeBook };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);

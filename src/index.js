@@ -14,6 +14,7 @@ const defaultBooks = {
     { id: uniqid(), title: 'Harry Potter', category: 'Kids' },
     { id: uniqid(), title: 'Something Random', category: 'Learning' },
   ],
+  filter: '',
 };
 
 const store = createStore(rootReducer, defaultBooks);

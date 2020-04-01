@@ -5,18 +5,16 @@ import uniqid from 'uniqid';
 
 import { createBook } from '../../actions';
 import './books-form.css';
-
-const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
-
-const initialState = {
-  title: '',
-  category: categories[0],
-};
+import withCategories from '../../components/HOC/withCategories';
 
 class BooksForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = initialState;
+    this.initialState = {
+      title: '',
+      category: props.categories[0],
+    };
+    this.state = this.initialState;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
@@ -28,7 +26,7 @@ class BooksForm extends React.Component {
 
     if (title) {
       createBook({ id: uniqid(), title, category });
-      this.setState(initialState);
+      this.setState(this.initialState);
     }
   }
 
@@ -38,6 +36,7 @@ class BooksForm extends React.Component {
 
   render() {
     const { title, category } = this.state;
+    const { categories } = this.props;
     return (
       <div className="books-form">
         <form onSubmit={this.handleSubmit}>
@@ -54,6 +53,9 @@ class BooksForm extends React.Component {
 
 BooksForm.propTypes = {
   createBook: PropTypes.func.isRequired,
+  categories: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-export default connect(null, { createBook })(BooksForm);
+export default connect(null, { createBook })(
+  withCategories(BooksForm),
+);
