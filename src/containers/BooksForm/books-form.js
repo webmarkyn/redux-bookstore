@@ -1,18 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { createBook } from '../../actions';
+import uniqid from 'uniqid';
 
+import { createBook } from '../../actions';
 import './books-form.css';
-import withCategories from '../HOC/withCategories';
+import withCategories from '../../components/HOC/withCategories';
 
 class BooksForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.initialState = {
       title: '',
       category: props.categories[0],
     };
+    this.state = this.initialState;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
@@ -21,7 +23,11 @@ class BooksForm extends React.Component {
     const { title, category } = this.state;
     const { createBook } = this.props;
     e.preventDefault();
-    createBook({ id: Math.floor(Math.random() * 100).toString(), title, category });
+
+    if (title) {
+      createBook({ id: uniqid(), title, category });
+      this.setState(this.initialState);
+    }
   }
 
   handleChange(e) {

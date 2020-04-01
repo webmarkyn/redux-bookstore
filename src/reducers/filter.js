@@ -1,8 +1,8 @@
 import { CHANGE_FILTER } from '../actions';
 
-const filterReducer = (state = 'All', action) => {
-  if (action.type === (CHANGE_FILTER)) {
-    return action.payload;
+const filterReducer = (state = 'All', {type, payload}) => {
+  if (type === (CHANGE_FILTER)) {
+    return payload;
   }
   return state;
 };

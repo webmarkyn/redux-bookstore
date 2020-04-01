@@ -1,9 +1,8 @@
 import React from 'react';
 
 import CategoriesContext from '../../context/categoriesContext';
-import BooksList from '../BooksList';
-import BooksForm from '../BooksForm';
-
+import BooksList from '../../containers/BooksList';
+import BooksForm from '../../containers/BooksForm';
 
 const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
 
