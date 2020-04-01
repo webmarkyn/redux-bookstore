@@ -2,6 +2,8 @@
 
 A Bookstore app built using React and Redux.
 
+![screenshot](./screenshot.png)
+
 ## Live Demo
 
 [Live Demo Link](https://redux-microverse-bookstore.herokuapp.com)

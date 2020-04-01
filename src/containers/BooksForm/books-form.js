@@ -39,9 +39,23 @@ class BooksForm extends React.Component {
     const { categories } = this.props;
     return (
       <div className="books-form">
+        <h2 className="form-header">Add new book</h2>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" placeholder="Title" name="title" value={title} onChange={this.handleChange} />
-          <select name="category" id="category" value={category} onChange={this.handleChange}>
+          <input
+            type="text"
+            placeholder="Title"
+            name="title"
+            value={title}
+            onChange={this.handleChange}
+            className="new-book-input"
+          />
+          <select
+            name="category"
+            id="category"
+            value={category}
+            onChange={this.handleChange}
+            className="new-book-category"
+          >
             {categories.map(cat => (<option key={cat} value={cat}>{cat}</option>))}
           </select>
           <input type="submit" value="Submit" />
