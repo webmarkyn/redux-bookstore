@@ -2,10 +2,9 @@ import React from 'react';
 
 import CategoriesContext from '../../context/categoriesContext';
 import CategoryFilter from '../categoryFilter';
-import BooksList from '../BooksList';
-import BooksForm from '../BooksForm';
+import BooksList from '../../containers/BooksList';
+import BooksForm from '../../containers/BooksForm';
 import './app.css';
-
 
 const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
 
